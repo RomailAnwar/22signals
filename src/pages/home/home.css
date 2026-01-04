@@ -1,0 +1,49 @@
+.portfolio-border{
+     border-top-left-radius: 70px;   
+  border-top-right-radius: 70px;  
+}
+
+.glass-card {
+  position: relative;
+  border-radius: 24px;
+  background-origin: border-box;
+  background-clip: border-box;
+  backdrop-filter: blur(36.8px);
+  background-color: rgba(128, 128, 128, 0.158);
+  overflow: hidden;
+}
+
+.glass-card-2 {
+  position: relative;
+  border-radius: 24px;
+  background-origin: border-box;
+  background-clip: border-box;
+  backdrop-filter: blur(10px);
+  background-color: rgba(128, 128, 128, 0.158);
+  overflow: hidden;
+}
+
+.badge {
+  position: absolute;          
+  top: 1rem;                   
+  left: 1rem;                  
+  background-color: rgba(31, 41, 55, 0.7);  
+  padding: 7px 20px;    
+  border-radius: 9999px;       
+  font-size: 0.75rem;          
+  color: #ffffff;             
+  font-weight: 500;            
+  display: inline-block;    
+  border: 1px solid rgba(50, 95, 236, 1);  
+}
+
+/* Mobile view: badge above title */
+@media (max-width: 768px) {
+  .badge {
+    position: static;          /* remove absolute */
+    display: block;            /* block to stack */
+    margin-bottom: 0.25rem;    /* spacing below badge */
+    text-align: left;
+     max-width: 50%;
+  }
+}

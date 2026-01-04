@@ -1,0 +1,325 @@
+import React from "react";
+import DigitalSolutions from "@/assets/digitalsolutions.png";
+import videoplayer from "@/assets/videoplayer.png";
+import videoplay from "@/assets/videoplay.svg";
+import Framed from "@/assets/DigitalIcon.png";
+import MyButton from "@/components/button.jsx";
+import SliderComponent from "@/components/slider.jsx";
+import Creative from "@/assets/creative.png";
+import CreativeIcon from "@/assets/creativeicon.png";
+import Stafficon from "@/assets/stafficon.png";
+import Broadcastingicon from "@/assets/broadcasticon.png";
+import staffbg from "@/assets/staffbg.png";
+import broadcastingbg from "@/assets/broadcastbg.png";
+
+import slide1 from "@/assets/Frame68.png";
+import slide2 from "@/assets/Frame69.png";
+import slide8 from "@/assets/Frame76.png";
+import slide3 from "@/assets/Frame70.png";
+import slide4 from "@/assets/Frame71.png";
+import slide5 from "@/assets/Frame72.png";
+import slide6 from "@/assets/Frame73.png";
+import slide7 from "@/assets/Frame74.png";
+
+const slides = [slide1, slide2, slide7, slide4, slide6, slide8, slide5, slide3];
+
+const HomeBody = () => {
+  return (
+    <section className="container bg-gray-50 py-16 px-6 md:px-12 lg:px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-center mb-20">
+        {/* Left Column: Text */}
+        <div>
+          <h1
+             className="bg-clip-text text-transparent text-center md:text-left"
+            style={{
+              backgroundImage:
+                "linear-gradient(91.16deg, #325FEC 1.74%, #000000 43.71%, #000000 61.62%, #325FEC 102.48%)",
+            }}
+          >
+            We translate complex <br />
+            challenges into tangible <br />
+            data-driven results.
+          </h1>
+        </div>
+
+        {/* Right Column: Video Card */}
+        <div className="w-full m-0 p-0 flex justify-center">
+          <div className="relative rounded-[24px] overflow-hidden shadow-lg w-full max-w-xl aspect-video">
+            <div
+              className="w-[668px] h-full bg-cover bg-center flex items-center justify-center"
+              style={{ backgroundImage: `url(${videoplayer})` }}
+            >
+              <img src={videoplay} alt="Play Button" className="h-16" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] items-center gap-8 mb-12">
+        <div>
+          <h1 className="font-thin text-[68px] leading-[1.1] text-center md:text-left">
+            <span className="bg-clip-text text-transparent bg-[linear-gradient(91.16deg,#325FEC_1.74%,#000000_43.71%,#000000_61.62%,#325FEC_102.48%)]">
+              Integrated Solutions.
+            </span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-[linear-gradient(91.16deg,#325FEC_1.74%,#000000_43.71%,#000000_61.62%,#325FEC_102.48%)]">
+              Singular Focus.
+            </span>
+          </h1>
+        </div>
+
+        <div className="flex justify-end text-center md:text-left">
+          <MyButton text="GET STARTED" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1.3fr] gap-10 my-10">
+        {/* First Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-[#325fec] z-0"></div>
+          <div
+            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            style={{
+              backgroundImage: `url(${DigitalSolutions})`,
+              backgroundPosition: "right -130px top 55px",
+            }}
+          ></div>
+
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            {/* Top Content: Icon + Title + Text */}
+            <div className="space-y-4">
+              <img src={Framed} alt="Card Icon" className="w-[60px] h-[60px]" />
+              <h3 className="text-2xl font-semibold">Digital Solutions</h3>
+              <p className="text-base">
+                Web dev, app dev, IoT and AI automations
+              </p>
+            </div>
+
+            {/* Button at the bottom */}
+            <button
+              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
+  !bg-[#466FEE] hover:opacity-100 
+  text-white py-2 px-4 rounded transition"
+            >
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Second Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-black z-0"></div>
+          <div
+            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            style={{
+              backgroundImage: `url(${Creative})`,
+              backgroundPosition: "right -50px top 60px",
+              backgroundSize: "auto",
+            }}
+          ></div>
+
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            {/* Top Content: Icon + Title + Text */}
+            <div className="space-y-4">
+              <img
+                src={CreativeIcon}
+                alt="Card Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <h3 className="blue-gradient-text">Creative Solutions</h3>
+              <p className="text-base">
+                Social Media Marketing, PPC Ads, Video Editing, 2D/3D
+                Animations, Modeling, Graphic Designing
+              </p>
+            </div>
+
+            {/* Button at the bottom */}
+            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-[1.3fr_2fr] gap-10 my-10">
+        {/* First Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-black z-0"></div>
+          <div
+            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            style={{
+              backgroundImage: `url(${staffbg})`,
+              backgroundPosition: "right -20px top 50px",
+            }}
+          ></div>
+
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            {/* Top Content: Icon + Title + Text */}
+            <div className="space-y-4">
+              <img
+                src={Stafficon}
+                alt="Card Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <h3 className="blue-gradient-text">Staff Augmentation</h3>
+              <p className="text-base">
+                Back end offices and remote employees{" "}
+              </p>
+            </div>
+
+            {/* Button at the bottom */}
+            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Second Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-[#325fec] z-0"></div>
+          <div
+            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            style={{
+              backgroundImage: `url(${broadcastingbg})`,
+              backgroundPosition: "right -5px top 50px",
+            }}
+          ></div>
+
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            {/* Top Content: Icon + Title + Text */}
+            <div className="space-y-4">
+              <img
+                src={Broadcastingicon}
+                alt="Card Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <h3 className="text-2xl font-semibold">
+                Broadcasting & Event Execution
+              </h3>
+              <p className="text-base">
+                Broadcasting solutions, remote broadcasting, esports event
+                management
+              </p>
+            </div>
+
+            {/* Button at the bottom */}
+            <button
+              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
+                        !bg-[#466FEE] hover:opacity-100 
+                        text-white py-2 px-4 rounded transition"
+            >
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2.5fr_1.2fr] gap-10 my-10">
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-black z-0"></div>
+          <div className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"></div>
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            <div className="space-y-4">
+              <img
+                src={CreativeIcon}
+                alt="Card Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <h3 className="blue-gradient-text">Game Development</h3>
+              <p className="text-base">
+                help you to build website company that is modern, user friendly,
+                good CEO, and Clean design{" "}
+              </p>
+            </div>
+            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Middle Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-[#325fec] z-0"></div>
+          <div
+            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            style={{
+              backgroundImage: `url(${DigitalSolutions})`,
+              backgroundPosition: "right -350px top 50px",
+            }}
+          ></div>
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            <div className="space-y-4">
+              <img src={Framed} alt="Card Icon" className="w-[60px] h-[60px]" />
+              <h3 className="text-2xl font-semibold">
+                Global Manufacturing Solutions
+              </h3>
+              <p className="text-base">
+                help you to build website company that is modern, user friendly,
+                good CEO, and Clean design
+              </p>
+            </div>
+            <button
+              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
+  !bg-[#466FEE] hover:opacity-100 
+  text-white py-2 px-4 rounded transition"
+            >
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Third Card */}
+        <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
+          <div className="absolute inset-0 bg-black z-0"></div>
+          <div className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"></div>
+          <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
+            <div className="space-y-4">
+              <img
+                src={CreativeIcon}
+                alt="Card Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <h3 className="blue-gradient-text">UI/UX Design</h3>
+              <p className="text-base">
+                help you to build website company that is modern, user friendly,
+                good CEO, and Clean design{" "}
+              </p>
+            </div>
+            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
+              GET STARTED <span>↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <SliderComponent slides={slides} />
+      </div>
+      <div></div>
+    </section>
+  );
+};
+
+const Card = ({ title, description, bg, text, style, className }) => {
+  return (
+    <div
+      className={`${bg || ""} ${
+        text || ""
+      } rounded-[24px] p-6 flex flex-col justify-between min-h-[220px] shadow-lg ${
+        className || ""
+      }`}
+      style={style}
+    >
+      <div>
+        <h4 className="text-xl font-semibold mb-2">{title}</h4>
+        <p className="text-sm opacity-90">{description}</p>
+      </div>
+
+      <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
+        GET STARTED
+        <span>↗</span>
+      </button>
+    </div>
+  );
+};
+
+export default HomeBody;
