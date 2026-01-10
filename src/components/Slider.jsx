@@ -11,8 +11,8 @@ const SliderComponent = ({ slides }) => {
     arrows: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    centerMode: true, // <-- ensures slides are centered
-    centerPadding: "0px", // no extra padding on the sides
+    centerMode: true, // keeps active slide centered
+    centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1024,
@@ -30,6 +30,8 @@ const SliderComponent = ({ slides }) => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          centerMode: true, // ensure centerMode is ON for mobile
+          centerPadding: "0px", // no extra space
         },
       },
     ],
@@ -46,7 +48,7 @@ const SliderComponent = ({ slides }) => {
             <img
               src={img}
               alt={`Logo ${index + 1}`}
-              className="w-24 md:w-32 object-contain"
+             className="w-32 md:w-32 sm:w-60 object-contain mx-auto"
             />
           </div>
         ))}

@@ -7,7 +7,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const tabs = ["Home", "Services", "Portfolio", "Team"];
+  const tabs = ["Home", "work", "Services", "Portfolio", "Team",  "R&D", "BLOG"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,24 +21,30 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-500">
       <div
         className={`w-full transition-colors duration-500 ${
-          scrolled
-            ? "bg-white/70 backdrop-blur-md shadow-md"
-            : "bg-transparent"
+          scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex items-center py-6 md:py-8 px-4 sm:px-6 md:px-8">
+<div className="container mx-auto grid items-center py-6 md:py-8 px-4 sm:px-6 md:px-8
+  grid-cols-[1fr_auto] sm:grid-cols-[0.5fr_3fr_0.6fr]">
           <div className="flex-1 flex items-center">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
           </div>
-          <nav className="hidden sm:flex flex-1 justify-center items-center space-x-6">
+          <nav className="hidden sm:flex flex-1 justify-center items-center space-x-6 gap-8">
             {tabs.map((tab) => (
               <a
                 key={tab}
                 href="#"
                 onClick={() => setActiveTab(tab)}
-                className={`hover:text-blue-600 transition-colors ${
-                  activeTab === tab ? "font-bold" : ""
-                }`}
+                className="transition-colors"
+                style={{
+                  fontSize: window.innerWidth < 768 ? "14px" : "15px",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                  letterSpacing: "0px",
+                  lineHeight: "1.4",
+                  gap: "24px",
+                  color: activeTab === tab ? "#000000" : "rgba(0, 0, 0, 0.5)",
+                }}
               >
                 {tab}
               </a>
@@ -116,7 +122,7 @@ const Header = () => {
         </div>
 
         {/* Menu items */}
-        <ul className="flex flex-col  items-center h-full px-6 py-8 space-y-6">
+        <ul className="flex flex-col  h-full px-6 py-8 space-y-6">
           {tabs.map((tab) => (
             <li key={tab}>
               <a
@@ -125,7 +131,7 @@ const Header = () => {
                   setActiveTab(tab);
                   setMobileMenuOpen(false);
                 }}
-                className={`block hover:text-blue-600 transition-colors ${
+                className={`block hover:text-blue-600 transition-colors uppercase  ${
                   activeTab === tab ? "font-bold" : ""
                 }`}
               >
@@ -133,9 +139,9 @@ const Header = () => {
               </a>
             </li>
           ))}
-          <li className="mt-4">
+          <div className="mt-4 flex justify-center">
             <MyButton />
-          </li>
+          </div>
         </ul>
       </div>
 

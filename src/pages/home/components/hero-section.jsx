@@ -44,37 +44,39 @@ const HeroSection = () => {
             </div>
 
             {/* Bottom Content */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10 md:my-12 items-center">
+         <div className="grid grid-cols-[1fr] md:grid-cols-[2fr_1fr_2fr] gap-8 my-10 md:my-12 items-center">
 
-              {/* Social Icons */}
-              <div className="flex justify-center md:justify-start gap-4">
-                <img src={Instagram} alt="Instagram" className="w-7 h-7" />
-                <img src={whatsapp} alt="WhatsApp" className="w-7 h-7" />
-                <img src={linkedin} alt="LinkedIn" className="w-7 h-7" />
-                <img src={twiter} alt="Twitter" className="w-7 h-7" />
-              </div>
+  {/* Social Icons Column */}
+  <div className="flex flex-col justify-end items-center md:items-start gap-4 h-full">
+    <div className="flex gap-4">
+      <img src={Instagram} alt="Instagram" className="w-[24px] h-[24px]" />
+      <img src={whatsapp} alt="WhatsApp" className="w-[24px] h-[24px]" />
+      <img src={linkedin} alt="LinkedIn" className="w-[24px] h-[24px]" />
+      <img src={twiter} alt="Twitter" className="w-[24px] h-[24px]" />
+    </div>
+  </div>
 
-              {/* Mouse Icon */}
-              <div className="flex justify-center">
-                <img src={Mouse} alt="Scroll" className="w-7 h-7" />
-              </div>
+  {/* Mouse Icon Column */}
+  <div className="flex flex-col justify-end items-center h-full">
+    <img src={Mouse} alt="Scroll" className="w-[30px] h-[43px]" />
+  </div>
+  {/* Text */}
+  <div className="text-center md:text-left">
+    <p className="dark-text">
+      22 Signals: Your one stop solution business provider. We
+      leverage an agile global network to deliver high quality,
+      cost effective solutions and empower your journey.
+    </p>
+  </div>
 
-              {/* Text */}
-              <div className="text-center md:text-left">
-                <p className="dark-text">
-                  22 Signals: Your one stop solution business provider. We
-                  leverage an agile global network to deliver high quality,
-                  cost effective solutions and empower your journey.
-                </p>
-              </div>
+</div>
 
-            </div>
           </div>
         </div>
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute "></div>
     </section>
   );
 };

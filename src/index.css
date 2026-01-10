@@ -12,11 +12,11 @@
 
 h1{
   font-weight: 300;
-    line-height: 75px;
+    line-height: 68px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background:  "linear-gradient(91.16deg, #325FEC 1.74%, #FFFFFF 43.71%, #FFFFFF 61.62%, #325FEC 102.48%)";
-    font-size: 68px; 
+    font-size: 60px; 
 }
   h2 {
     font-weight: 300;
@@ -35,7 +35,7 @@ h1{
   h3{
     font-weight: 300;
     font-size: 45px;
-    line-height: 75px;
+    line-height: 48px;
     letter-spacing: 0%;
     background: linear-gradient(91.16deg, #BFBFBF 1.74%, #FFFFFF 43.71%, #FFFFFF 61.62%, #BFBFBF 102.48%);
     -webkit-background-clip: text;
@@ -49,9 +49,9 @@ h1{
 
   p{
     color: rgba(255, 255, 255, 0.7);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 133%;
-    letter-spacing: 2%;
+    font-weight: 100 !important;
     vertical-align: middle;
   }
   .dark-text{
@@ -75,10 +75,12 @@ h1{
 @media (max-width: 640px) {
   h2 {
     font-size: 32px; /* Mobile */
+    padding: 19px 0px;
     
   }
   h3{
     line-height: 50px;
+    width: 100%;
   }
   h1{
     font-size: 45px; /* Mobile */
@@ -86,6 +88,9 @@ h1{
   } 
   .dark-text{
     font-size: 22px;
+  }
+  P{
+    width: 100%;
   }
 }
 

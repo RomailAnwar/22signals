@@ -19,22 +19,96 @@
   background-origin: border-box;
   background-clip: border-box;
   backdrop-filter: blur(10px);
-  background-color: rgba(128, 128, 128, 0.158);
+  background-color: rgb(0 0 0 / 41%);
   overflow: hidden;
 }
 
 .badge {
-  position: absolute;          
-  top: 1rem;                   
-  left: 1rem;                  
-  background-color: rgba(31, 41, 55, 0.7);  
-  padding: 7px 20px;    
-  border-radius: 9999px;       
-  font-size: 0.75rem;          
-  color: #ffffff;             
-  font-weight: 500;            
-  display: inline-block;    
-  border: 1px solid rgba(50, 95, 236, 1);  
+  
+    top: 34px;
+    left: 24px;
+    background-color: rgba(31, 41, 55, 0.7);
+    padding: 7px 20px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(50, 95, 236, 1);
+    width: 156px;
+}
+
+.testimonial-text{
+  line-height: 24px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.testimonial-text-role{
+  font-size: 12px;
+  color: #ffffff; 
+}
+/* {footercss} */
+.digital-age-text{
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.7); 
+  padding-top: 10px;
+
+}
+
+.footer-des{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7); 
+  line-height: 26px;
+  width: 60%;
+}
+
+.text-content {
+  font-weight: 400;
+  font-style: normal;         
+  font-size: 16px;
+  line-height: 45px;
+  letter-spacing: -0.02em;     
+  color: rgba(155, 155, 156, 1);              
+}
+
+.text-contents{
+  font-weight: 400;
+  font-style: normal;         
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: -0.02em;     
+  color: rgba(155, 155, 156, 1);              
+}
+.text-content li{
+  cursor: pointer;
+  font-size: 15px;
+}
+.menu-heading{
+  font-weight: 600;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -1%;
+  color:rgba(50, 95, 236, 1);
+}
+
+.contact-text{
+  font-size: 15px;
+  color: rgba(155, 155, 156, 1);
+}
+.contact-location{
+  font-size: 15px;
+  color: rgba(155, 155, 156, 1);
+  line-height: 25px;
+}
+
+.bottom-bar span{
+font-family: PP Mori, sans-serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+letter-spacing: 0%;
+color: rgba(222, 225, 230, 1);
 }
 
 /* Mobile view: badge above title */
@@ -45,5 +119,158 @@
     margin-bottom: 0.25rem;    /* spacing below badge */
     text-align: left;
      max-width: 50%;
+  }
+
+  .footer-des{
+  width: 100%;
+}
+}
+
+
+.floating-img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile: adjust for smaller screens */
+@media (max-width: 768px) {
+  .floating-img {
+    transform: translateY(-400%);
+  }
+}
+
+
+.gradient-border {
+  position: relative;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+/* Gradient border layer */
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1.5px; /* border thickness */
+  background: linear-gradient(
+    135deg,
+    #4f7cff 0%,
+    rgba(79, 124, 255, 0.6) 30%,
+    rgba(79, 124, 255, 0.15) 55%,
+    transparent 75%
+  );
+
+  /* This creates the border cut-out */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+.testimonial-border {
+  position: relative;
+}
+
+.testimonial-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 3;
+
+  /* premium even border */
+ background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.4) 12%,
+    rgba(255,255,255,0.15) 36%,
+    transparent 75%
+  );
+
+  /* PERFECT stroke thickness everywhere */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  padding: 1.5px;
+}
+
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+ .digital-bg {
+    background-size: 101%;
+    background-position: right -148px top 205px !important;
+}
+.creative-solutions{
+   background-size: 101%;
+  background-position: right -96px top 160px !important;
+}
+.staff-bg{
+   background-size: 101%;
+  background-position: right 0px top 144px !important;
+}
+.broafcatingbg{
+   background-size: 101%;
+  background-position: right -2px top 171px !important;
+}
+}
+
+
+.svg-container {
+    position: absolute;
+    top: 147px;
+    left: 88px;
+    width: 100%;
+    max-width: 90%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: -1;
+}
+
+
+.svg-container svg {
+  width: 100%;
+  height: auto;
+}
+
+.second-svg{
+     position: absolute;
+    bottom: -86px;
+    left: 104px;
+    width: 89%;
+    height: auto;
+    pointer-events: none;
+    z-index: -1;
+}
+
+ .thirdsvg{
+        position: absolute;
+    top: -200px;
+    left: 88px;
+    width: 90%;
+    height: auto;
+    pointer-events: none;
+    z-index: -10;
+}
+
+@media (max-width: 768px) {
+  .second-svg,
+  .svg-container,
+  .thirdsvg {
+    display: none;
   }
 }

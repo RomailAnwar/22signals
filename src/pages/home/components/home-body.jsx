@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import DigitalSolutions from "@/assets/digitalsolutions.png";
 import videoplayer from "@/assets/videoplayer.png";
 import videoplay from "@/assets/videoplay.svg";
@@ -20,36 +22,55 @@ import slide4 from "@/assets/Frame71.png";
 import slide5 from "@/assets/Frame72.png";
 import slide6 from "@/assets/Frame73.png";
 import slide7 from "@/assets/Frame74.png";
+import ScrollLine from "./ScrollLine.jsx";
+import ScrollLineBottom from "./ScrollLineBottom.jsx";
 
 const slides = [slide1, slide2, slide7, slide4, slide6, slide8, slide5, slide3];
 
 const HomeBody = () => {
   return (
-    <section className="container bg-gray-50 py-16 px-6 md:px-12 lg:px-20">
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-center mb-20">
+    <section className="container relative py-16 px-6 md:px-12 lg:px-20">
+      <div className="svg-container">
+        <ScrollLine />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1.7fr] gap-12 items-center mb-20">
         {/* Left Column: Text */}
         <div>
           <h1
-             className="bg-clip-text text-transparent text-center md:text-left"
+            className="bg-clip-text text-transparent text-center md:text-left"
             style={{
               backgroundImage:
                 "linear-gradient(91.16deg, #325FEC 1.74%, #000000 43.71%, #000000 61.62%, #325FEC 102.48%)",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              borderRadius: "18px",
             }}
           >
             We translate complex <br />
-            challenges into tangible <br />
-            data-driven results.
+            challenges into tangible data driven results.
           </h1>
         </div>
 
         {/* Right Column: Video Card */}
-        <div className="w-full m-0 p-0 flex justify-center">
-          <div className="relative rounded-[24px] overflow-hidden shadow-lg w-full max-w-xl aspect-video">
+        <div className="w-full  m-0 p-0 flex justify-center">
+          <div className="relative w-full max-w-[668px] h-[300px] bg-cover bg-center flex items-center justify-center overflow-hidden">
             <div
-              className="w-[668px] h-full bg-cover bg-center flex items-center justify-center"
-              style={{ backgroundImage: `url(${videoplayer})` }}
+              className="w-full h-full bg-cover bg-center flex items-center justify-center"
+              style={{
+                backgroundImage: `url(${videoplayer})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                borderRadius: "24px",
+              }}
             >
-              <img src={videoplay} alt="Play Button" className="h-16" />
+              {/* Play Button */}
+              <img
+                src={videoplay}
+                alt="Play Button"
+                className="h-16 pointer-events-none"
+              />
             </div>
           </div>
         </div>
@@ -67,7 +88,7 @@ const HomeBody = () => {
           </h1>
         </div>
 
-        <div className="flex justify-end text-center md:text-left">
+        <div className="flex justify-center md:justify-end mt-6 md:mt-0">
           <MyButton text="GET STARTED" />
         </div>
       </div>
@@ -77,7 +98,7 @@ const HomeBody = () => {
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-[#325fec] z-0"></div>
           <div
-            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            className="absolute digital-bg inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
             style={{
               backgroundImage: `url(${DigitalSolutions})`,
               backgroundPosition: "right -130px top 55px",
@@ -88,9 +109,11 @@ const HomeBody = () => {
             {/* Top Content: Icon + Title + Text */}
             <div className="space-y-4">
               <img src={Framed} alt="Card Icon" className="w-[60px] h-[60px]" />
-              <h3 className="text-2xl font-semibold">Digital Solutions</h3>
-              <p className="text-base">
-                Web dev, app dev, IoT and AI automations
+              <h3 className="text-2xl font-semibold w-[445px]">
+                Digital Solutions
+              </h3>
+              <p className="text-base w-[337px]">
+                Web dev, app dev, IoT and AI <br></br> automations
               </p>
             </div>
 
@@ -109,7 +132,7 @@ const HomeBody = () => {
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-black z-0"></div>
           <div
-            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            className="absolute creative-solutions inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
             style={{
               backgroundImage: `url(${Creative})`,
               backgroundPosition: "right -50px top 60px",
@@ -126,7 +149,7 @@ const HomeBody = () => {
                 className="w-[60px] h-[60px]"
               />
               <h3 className="blue-gradient-text">Creative Solutions</h3>
-              <p className="text-base">
+              <p className="text-base w-[322px]">
                 Social Media Marketing, PPC Ads, Video Editing, 2D/3D
                 Animations, Modeling, Graphic Designing
               </p>
@@ -145,7 +168,7 @@ const HomeBody = () => {
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-black z-0"></div>
           <div
-            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            className="absolute staff-bg inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
             style={{
               backgroundImage: `url(${staffbg})`,
               backgroundPosition: "right -20px top 50px",
@@ -161,8 +184,8 @@ const HomeBody = () => {
                 className="w-[60px] h-[60px]"
               />
               <h3 className="blue-gradient-text">Staff Augmentation</h3>
-              <p className="text-base">
-                Back end offices and remote employees{" "}
+              <p className="text-base w-[337px]">
+                Back end offices and remote <br></br> employees
               </p>
             </div>
 
@@ -177,7 +200,7 @@ const HomeBody = () => {
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-[#325fec] z-0"></div>
           <div
-            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            className="absolute broafcatingbg inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
             style={{
               backgroundImage: `url(${broadcastingbg})`,
               backgroundPosition: "right -5px top 50px",
@@ -192,10 +215,10 @@ const HomeBody = () => {
                 alt="Card Icon"
                 className="w-[60px] h-[60px]"
               />
-              <h3 className="text-2xl font-semibold">
+              <h3 className="text-2xl font-semibold w-[445px]">
                 Broadcasting & Event Execution
               </h3>
-              <p className="text-base">
+              <p className="text-base w-[377px]">
                 Broadcasting solutions, remote broadcasting, esports event
                 management
               </p>
@@ -213,7 +236,7 @@ const HomeBody = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2.5fr_1.2fr] gap-10 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2.5fr_1.2fr] gap-10 my-10 mb-20">
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-black z-0"></div>
           <div className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"></div>
@@ -225,7 +248,7 @@ const HomeBody = () => {
                 className="w-[60px] h-[60px]"
               />
               <h3 className="blue-gradient-text">Game Development</h3>
-              <p className="text-base">
+              <p className="text-base ">
                 help you to build website company that is modern, user friendly,
                 good CEO, and Clean design{" "}
               </p>
@@ -240,7 +263,7 @@ const HomeBody = () => {
         <div className="h-[435px] relative rounded-[24px] overflow-hidden shadow-lg flex flex-col">
           <div className="absolute inset-0 bg-[#325fec] z-0"></div>
           <div
-            className="absolute inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
+            className="absolute digital-bg inset-0 bg-no-repeat bg-contain bg-right object-contain z-10"
             style={{
               backgroundImage: `url(${DigitalSolutions})`,
               backgroundPosition: "right -350px top 50px",
@@ -249,10 +272,10 @@ const HomeBody = () => {
           <div className="relative z-20 flex flex-col justify-between h-full p-6 text-white">
             <div className="space-y-4">
               <img src={Framed} alt="Card Icon" className="w-[60px] h-[60px]" />
-              <h3 className="text-2xl font-semibold">
+              <h3 className="text-2xl font-semibold w-[445px]">
                 Global Manufacturing Solutions
               </h3>
-              <p className="text-base">
+              <p className="text-base w-[387px]">
                 help you to build website company that is modern, user friendly,
                 good CEO, and Clean design
               </p>
@@ -279,7 +302,7 @@ const HomeBody = () => {
                 className="w-[60px] h-[60px]"
               />
               <h3 className="blue-gradient-text">UI/UX Design</h3>
-              <p className="text-base">
+              <p className="text-base ">
                 help you to build website company that is modern, user friendly,
                 good CEO, and Clean design{" "}
               </p>
@@ -291,7 +314,8 @@ const HomeBody = () => {
         </div>
       </div>
 
-      <div>
+      <div className="mb-10">
+        <ScrollLineBottom />
         <SliderComponent slides={slides} />
       </div>
       <div></div>
