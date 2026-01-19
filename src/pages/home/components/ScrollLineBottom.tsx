@@ -13,19 +13,20 @@ const ScrollLineBottom = () => {
     path.style.strokeDasharray = pathLength;
     path.style.strokeDashoffset = pathLength;
 
-    const handleScroll = () => {
-      const svgTop = svg.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+const handleScroll = () => {
+  const svgTop = svg.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
 
-      const start = windowHeight * 0.9;
-      const end = windowHeight * 0.1;
+  const start = windowHeight * 0.9;
+  const end = windowHeight * 0.1;
 
-      let progress = (svgTop - end) / (start - end);
-      progress = Math.min(Math.max(progress, 0), 1);
+  let progress = (svgTop - end) / (start - end);
+  progress = Math.min(Math.max(progress, 0), 1);
 
-      // 🔹 CHANGE HERE: reverse the formula
-      path.style.strokeDashoffset = pathLength * (1 - progress);
-    };
+  // Draw top → bottom (same as first component)
+  path.style.strokeDashoffset = pathLength * progress;
+};
+
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -41,14 +42,15 @@ const ScrollLineBottom = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="second-svg"
     >
-      <path
-        ref={pathRef}
-        opacity="0.8"
-        d="M1662.27 429H1686.5C1711.91 429 1732.5 408.405 1732.5 383V300.192C1732.5 274.787 1711.91 254.192 1686.5 254.192H48.5C23.0949 254.192 2.5 233.597 2.5 208.192V97.0029C2.5 71.5978 23.0949 51.0029 48.5 51.0029H1221.93C1247.33 51.0029 1267.93 30.408 1267.93 5.00289V0"
-        stroke="url(#gradientBottom)"
-        strokeWidth="5"
-        fill="none"
-      />
+     <path
+  ref={pathRef}
+  opacity="0.8"
+  d="M1267.93 0V5.00289C1267.93 30.408 1247.33 51.0029 1221.93 51.0029H48.5C23.0949 51.0029 2.5 71.5978 2.5 97.0029V208.192C2.5 233.597 23.0949 254.192 48.5 254.192H1686.5C1711.91 254.192 1732.5 274.787 1732.5 300.192V383C1732.5 408.405 1711.91 429 1686.5 429H1662.27"
+  stroke="url(#gradientBottom)"
+  strokeWidth="5"
+  fill="none"
+/>
+
 
       <defs>
         <linearGradient

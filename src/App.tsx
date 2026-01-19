@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from "../src/layout/header.jsx";
-import Footer from "../src/layout/footer.jsx";
-import Home from "./pages/home/home.jsx";
+import Header from "../src/layout/header.tsx";
+import Footer from "../src/layout/footer.tsx";
+import Home from "./pages/home/home.tsx";
+import Work from "./pages/work/work.tsx";
 
 export default function App() {
   return (
@@ -14,8 +15,8 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+           <Route path="/work" element={<Work />} />
+             {/* <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>

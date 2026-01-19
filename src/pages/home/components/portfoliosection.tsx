@@ -1,5 +1,5 @@
 import React from "react";
-import MyButton from "@/components/button.jsx";
+import MyButton from "@/components/button.tsx";
 import Floatingimg from "@/assets/uil_arrow-up.svg";
 import Bigimg1 from "@/assets/Bigimg1.png";
 import Bigimg2 from "@/assets/Bigimg2.png";

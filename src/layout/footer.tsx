@@ -3,7 +3,7 @@ import Group85 from "../assets/Group85.svg";
 import Group86 from "../assets/Group86.svg";
 import Group87 from "../assets/Group87.svg";
 import Group88 from "../assets/Group88.svg";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import Union from "../assets/Union.svg";
 import BgImage from "../assets/footerbg.png";
 import OverlayImage from "../assets/Vector.png";

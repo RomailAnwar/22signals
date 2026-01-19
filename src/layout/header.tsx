@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/logo.svg";
-import MyButton from "../components/button.jsx";
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+import MyButton from "../components/button.tsx";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const tabs = ["Home", "work", "Services", "Portfolio", "Team",  "R&D", "BLOG"];
+  const tabs = [
+    { label: "Home", path: "/" },
+    { label: "Work", path: "/work" },
+    { label: "Services", path: "#" },
+    { label: "Portfolio", path: "#" },
+    { label: "Team", path: "#" },
+    { label: "R&D", path: "#" },
+    { label: "BLOG", path: "#" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,9 +42,13 @@ const Header = () => {
           <nav className="hidden sm:flex flex-1 justify-center items-center space-x-6 gap-8">
             {tabs.map((tab) => (
               <a
-                key={tab}
+                key={tab.label}
                 href="#"
-                onClick={() => setActiveTab(tab)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab(tab.label);
+                  navigate(tab.path);
+                }}
                 className="transition-colors"
                 style={{
                   fontSize: window.innerWidth < 768 ? "14px" : "15px",
@@ -43,10 +57,10 @@ const Header = () => {
                   letterSpacing: "0px",
                   lineHeight: "1.4",
                   gap: "24px",
-                  color: activeTab === tab ? "#000000" : "rgba(0, 0, 0, 0.5)",
+                  color: activeTab === tab.label ? "#000000" : "rgba(0, 0, 0, 0.5)",
                 }}
               >
-                {tab}
+                {tab.label}
               </a>
             ))}
           </nav>
@@ -124,18 +138,20 @@ const Header = () => {
         {/* Menu items */}
         <ul className="flex flex-col  h-full px-6 py-8 space-y-6">
           {tabs.map((tab) => (
-            <li key={tab}>
+            <li key={tab.label}>
               <a
                 href="#"
-                onClick={() => {
-                  setActiveTab(tab);
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab(tab.label);
+                  navigate(tab.path);
                   setMobileMenuOpen(false);
                 }}
                 className={`block hover:text-blue-600 transition-colors uppercase  ${
-                  activeTab === tab ? "font-bold" : ""
+                  activeTab === tab.label ? "font-bold" : ""
                 }`}
               >
-                {tab}
+                {tab.label}
               </a>
             </li>
           ))}

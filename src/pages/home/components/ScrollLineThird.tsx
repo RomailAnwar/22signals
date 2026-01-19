@@ -23,8 +23,7 @@ const ScrollLineThird = () => {
       let progress = (svgTop - end) / (start - end);
       progress = Math.min(Math.max(progress, 0), 1);
 
-      // Top → Bottom draw
-      path.style.strokeDashoffset = pathLength * (1 - progress);
+   path.style.strokeDashoffset = pathLength * progress;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,13 +41,14 @@ const ScrollLineThird = () => {
       className="thirdsvg"
     >
       <g opacity="0.8">
-        <path
-          ref={pathRef}
-          d="M80.749 731.5H52.5C27.0949 731.5 6.5 710.905 6.5 685.5V314.5C6.5 289.095 27.0949 268.5 52.5 268.5H1690.5C1715.91 268.5 1736.5 247.905 1736.5 222.5V48.5C1736.5 23.0949 1715.91 2.5 1690.5 2.5H1652.13"
-          stroke="url(#gradientThird)"
-          strokeWidth="5"
-          fill="none"
-        />
+       <path
+  ref={pathRef}
+  d="M1652.13 2.5H1690.5C1715.91 2.5 1736.5 23.0949 1736.5 48.5V222.5C1736.5 247.905 1715.91 268.5 1690.5 268.5H52.5C27.0949 268.5 6.5 289.095 6.5 314.5V685.5C6.5 710.905 27.0949 731.5 52.5 731.5H80.749"
+  stroke="url(#gradientThird)"
+  strokeWidth="5"
+  fill="none"
+/>
+
       </g>
 
       <defs>
