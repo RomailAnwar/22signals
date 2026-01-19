@@ -9,7 +9,7 @@ import MyButton from "@/components/button.tsx";
 import SliderComponent from "@/components/Slider.tsx";
 import Creative from "@/assets/creative.png";
 import CreativeIcon from "@/assets/creativeicon.png";
-import Stafficon from "@/assets/stafficon.png";
+import Stafficon from "@/assets/staffIcon.png";
 import Broadcastingicon from "@/assets/broadcasticon.png";
 import staffbg from "@/assets/staffbg.png";
 import broadcastingbg from "@/assets/broadcastbg.png";
