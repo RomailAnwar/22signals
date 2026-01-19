@@ -49,7 +49,7 @@ const HomeBody = () => {
             }}
           >
             We translate complex <br />
-            challenges into tangible data driven results. 
+            challenges into tangible data driven results.  
           </h1>
         </div>
 
