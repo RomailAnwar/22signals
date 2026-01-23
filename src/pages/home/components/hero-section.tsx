@@ -51,13 +51,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ nextSectionRef }) => {
             <div
               className="w-full bg-[#161922] rounded-2xl md:rounded-[38px]
                          mt-6 md:mt-8
-
+                          h-[400px]
                          flex items-center justify-center"
             >
               <img
                 src={heroImage}
                 alt="Hero"
-                className="w-full h-full object-contain rounded-2xl md:rounded-[38px]"
+                className="w-full h-full object-contain rounded-2xl md:rounded-[38px] "
               />
             </div>
 
