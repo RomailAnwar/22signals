@@ -39,14 +39,14 @@ const Footer = () => {
           {/* Left */}
           <div className="text-center md:text-left sm:pt-10">
             <h2
-              className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4
+              className="recentproject-title flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4
                          text-[28px] sm:text-[32px] md:text-[48px]"
             >
               Schedule a call. Let’s connect!
               <img src={Union} alt="Union" className="ml-2 inline-block w-8 h-8 md:w-10 md:h-10" />
             </h2>
 
-            <p className="digital-age-text">
+            <p className="white-text">
               Get the signal for what's next... or get left behind in the digital age.
             </p>
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
             <div>
               <img src={Logo} alt="Logo" className="mb-4 mx-auto md:mx-0" />
 
-              <p className="footer-des mb-6">
+              <p className="mb-6 w-[100%] md:w-[70%]">
                We offers a comprehensive suite of digital marketing services that cover all aspects of our online presence. From SEO and social media marketing to content creation and PPC advertising, they have the expertise and resources to handle our diverse marketing needs.
               </p>
 

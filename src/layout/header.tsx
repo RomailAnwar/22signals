@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import MyButton from "../components/button.tsx";
+import "./headerfooter.css";
+import Headericon from "@/assets/headericon.png";
+
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+
   const [activeTab, setActiveTab] = useState("Home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const isTeamPage = location.pathname === "/team";
+
   const tabs = [
     { label: "Home", path: "/" },
     { label: "Work", path: "/work" },
-    { label: "Services", path: "#" },
-    { label: "Portfolio", path: "#" },
-    { label: "Team", path: "#" },
-    { label: "R&D", path: "#" },
-    { label: "BLOG", path: "#" },
+    { label: "Services", path: "/services" },
+    { label: "Portfolio", path: "/portfolio" },
+    { label: "Team", path: "/team" },
+    { label: "R&D", path: "/r&d" },
+    { label: "BLOG", path: "/blog" },
   ];
 
   useEffect(() => {
@@ -28,115 +36,67 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-500">
-      <div
-        className={`w-full transition-colors duration-500 ${
-          scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-transparent"
-        }`}
-      >
-<div className="container mx-auto grid items-center py-6 md:py-8 px-4 sm:px-6 md:px-8
-  grid-cols-[1fr_auto] sm:grid-cols-[0.5fr_3fr_0.6fr]">
-          <div className="flex-1 flex items-center">
-            <img src={logo} alt="Logo" className="h-10 w-auto" />
-          </div>
-          <nav className="hidden sm:flex flex-1 justify-center items-center space-x-6 gap-8">
-            {tabs.map((tab) => (
-              <a
-                key={tab.label}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setActiveTab(tab.label);
-                  navigate(tab.path);
-                }}
-                className="transition-colors"
-                style={{
-                  fontSize: window.innerWidth < 768 ? "14px" : "15px",
-                  fontWeight: 500,
-                  textTransform: "uppercase",
-                  letterSpacing: "0px",
-                  lineHeight: "1.4",
-                  gap: "24px",
-                  color: activeTab === tab.label ? "#000000" : "rgba(0, 0, 0, 0.5)",
-                }}
-              >
-                {tab.label}
-              </a>
-            ))}
-          </nav>
+    <header
+      className={`header ${scrolled ? "scrolled" : ""} ${
+        isTeamPage ? "team-header" : ""
+      }`}
+    >
+      <div className="header-container">
+        <div className="logo-wrapper">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
 
-          <div className="hidden sm:flex flex-1 justify-end">
+        {/* Desktop Menu */}
+        <nav className="menu desktop-menu">
+          {tabs.map((tab) => (
+            <a
+              key={tab.label}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab(tab.label);
+                navigate(tab.path);
+              }}
+             className={`menu-item ${
+  activeTab === tab.label ? "active" : ""
+} ${isTeamPage && !scrolled ? "menu-white" : "menu-black"}`}
+
+            >
+              {tab.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="desktop-button">
+          <img src={Headericon} className="w-[44px] h-[44px]" alt="" />
+          <div className="btn">
             <MyButton />
           </div>
-          <div className="sm:hidden flex-1 flex justify-end">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 focus:outline-none"
-            >
-              {mobileMenuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+        </div>
+
+        {/* Mobile Hamburger */}
+        <div className="mobile-hamburger">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
 
       {/* Mobile Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform transition-transform duration-500 ease-in-out sm:hidden z-50 ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        {/* Close button */}
-        <div className="flex justify-end p-4">
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+      <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
+        <div className="mobile-menu-close">
+          <button onClick={() => setMobileMenuOpen(false)}>✕</button>
         </div>
 
-        {/* Menu items */}
-        <ul className="flex flex-col  h-full px-6 py-8 space-y-6">
+        <ul className="mobile-menu-list">
           {tabs.map((tab) => (
             <li key={tab.label}>
               <a
@@ -147,15 +107,16 @@ const Header = () => {
                   navigate(tab.path);
                   setMobileMenuOpen(false);
                 }}
-                className={`block hover:text-blue-600 transition-colors uppercase  ${
-                  activeTab === tab.label ? "font-bold" : ""
-                }`}
+               className={`mobile-menu-item ${
+  activeTab === tab.label ? "active" : ""
+} ${isTeamPage && !scrolled ? "menu-white" : "menu-black"}`}
               >
                 {tab.label}
               </a>
             </li>
           ))}
-          <div className="mt-4 flex justify-center">
+
+          <div className="mobile-menu-button">
             <MyButton />
           </div>
         </ul>
@@ -163,9 +124,7 @@ const Header = () => {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-30 transition-opacity duration-500 sm:hidden z-40 ${
-          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`overlay ${mobileMenuOpen ? "visible" : ""}`}
         onClick={() => setMobileMenuOpen(false)}
       ></div>
     </header>

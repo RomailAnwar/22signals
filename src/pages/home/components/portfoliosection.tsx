@@ -161,10 +161,10 @@ const PortfolioSection = () => {
 
                   <div className="flex flex-col justify-start">
                     <span className="badge">Development Project</span>
-                    <h2 className="font-semibold text-lg md:text-xl pt-5 pb-15">
+                    <h2 className="recentproject-title">
                       {project.title}
                     </h2>
-                    <p className="text-gray-300 text-xs md:text-sm max-w-full md:max-w-[90%] mt-1 md:mt-2">
+                    <p className="mt-1 md:mt-2">
                       {project.description}
                     </p>
                   </div>
@@ -211,7 +211,7 @@ const PortfolioSection = () => {
 
         <section className="container mx-auto px-4 md:px-8 relative z-10 py-12">
            <ScrollLineThird />
-          <h2 className="text-2xl md:text-3xl font-light text-blue-400 py-20 mb-8 md:mb-12 text-center md:text-left">
+          <h2 className="h2.recentproject-title text-2xl md:text-3xl font-light text-blue-400 py-20 mb-8 md:mb-12 text-center md:text-left">
             Proven Results
             <img src={Union} alt="Union" className="ml-2 inline-block" />
           </h2>

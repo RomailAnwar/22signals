@@ -39,7 +39,7 @@ const HeroSection = () => {
               <img
                 src={heroImage}
                 alt="Hero"
-                className="w-full h-full object-cover rounded-2xl md:rounded-[38px]"
+                className="w-full h-full object-contain rounded-2xl md:rounded-[38px]"
               />
             </div>
 

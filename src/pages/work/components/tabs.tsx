@@ -45,7 +45,7 @@ const Tabs = () => {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <div className="container bg-[#f0f1fa] mx-auto px-4 py-12">
+    <div className="container  mx-auto px-4 py-12">
       {/* Tabs */}
       <div className="tabs flex gap-4 overflow-x-auto scrollbar-hide">
         {tabs.map((tab) => (

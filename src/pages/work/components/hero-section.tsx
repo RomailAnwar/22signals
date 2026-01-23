@@ -12,10 +12,10 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay and content wrapper */}
-      <div className="container mx-auto pt-32 md:pt-60 relative z-10 px-4 md:px-0">
+      <div className="container md:pt-60 relative z-10 px-4 md:px-0">
         {/* Heading section */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <h1 className="featured-heading text-5xl md:text-[164px] leading-tight md:leading-[1.1] font-thin bg-clip-text text-transparent bg-gradient-to-r from-[#325fec] via-black to-[#325fec]">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left pt-60 md:pt-10">
+          <h1 className="h1-large">
             FEATURED WORK
           </h1>
 
@@ -43,15 +43,15 @@ const HeroSection = () => {
             <h3 className="cards-heading text-xl md:text-3xl font-thin bg-clip-text text-transparent bg-gradient-to-r from-[#325fec] via-black to-[#325fec]">
               AI-Powered Analytics
             </h3>
-            <p className="card-text text-sm md:text-base">
+            <p className="dark-text text-sm md:text-base">
               Real-time insights and predictive modeling for smarter decisions
             </p>
           </div>
         </div>
 
         {/* Middle Card */}
-        <div className="flex justify-center md:justify-center items-center">
-          <div className="middle-card flex flex-col items-start p-6 md:p-10 rounded-2xl bg-gradient-to-r from-[#325fec] via-black to-[#325fec] backdrop-blur-sm gap-4 md:gap-6 text-center md:text-left">
+        <div className="flex justify-center md:justify-center items-start">
+          <div className="middle-card flex flex-col items-start p-6 md:p-10 rounded-2xl bg-gradient-to-r from-[#325fec] via-black to-[#325fec] backdrop-blur-sm gap-4 md:gap-6 ">
             <img src={cardicon2} className="w-12 h-12 md:w-16 md:h-16" alt="Quantum Icon" />
             <h3 className="text-white text-xl md:text-3xl font-thin">
               Quantum Computing
@@ -63,13 +63,13 @@ const HeroSection = () => {
         </div>
 
         {/* Right card */}
-        <div className="flex justify-end md:justify-start">
-          <div className="card flex flex-col items-start p-6 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm gap-4 md:gap-6">
+        <div className="flex justify-end md:justify-start items-start">
+          <div className="card flex flex-col items-start p-6 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm gap-4 md:gap-6 ">
             <img src={cardicon3} className="w-12 h-12 md:w-16 md:h-16" alt="Neural Icon" />
             <h3 className="cards-heading text-xl md:text-3xl font-thin bg-clip-text text-transparent bg-gradient-to-r from-[#325fec] via-black to-[#325fec]">
               Neural Interfaces
             </h3>
-            <p className="card-text text-sm md:text-base">
+            <p className="dark-text text-sm md:text-base">
               Seamless human-computer interaction through advanced UX
             </p>
           </div>

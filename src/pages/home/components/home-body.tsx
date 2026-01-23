@@ -49,7 +49,7 @@ const HomeBody = () => {
             }}
           >
             We translate complex <br />
-            challenges into tangible data driven results.   
+            challenges into tangible data driven results.
           </h1>
         </div>
 
@@ -109,22 +109,14 @@ const HomeBody = () => {
             {/* Top Content: Icon + Title + Text */}
             <div className="space-y-4">
               <img src={Framed} alt="Card Icon" className="w-[60px] h-[60px]" />
-              <h3 className="text-2xl font-semibold w-[445px]">
-                Digital Solutions
-              </h3>
+              <h3 className=" w-[445px]">Digital Solutions</h3>
               <p className="text-base w-[337px]">
                 Web dev, app dev, IoT and AI <br></br> automations
               </p>
             </div>
-
-            {/* Button at the bottom */}
-            <button
-              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
-  !bg-[#466FEE] hover:opacity-100 
-  text-white py-2 px-4 rounded transition"
-            >
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
 
@@ -154,11 +146,9 @@ const HomeBody = () => {
                 Animations, Modeling, Graphic Designing
               </p>
             </div>
-
-            {/* Button at the bottom */}
-            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
       </div>
@@ -188,11 +178,9 @@ const HomeBody = () => {
                 Back end offices and remote <br></br> employees
               </p>
             </div>
-
-            {/* Button at the bottom */}
-            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
 
@@ -223,15 +211,9 @@ const HomeBody = () => {
                 management
               </p>
             </div>
-
-            {/* Button at the bottom */}
-            <button
-              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
-                        !bg-[#466FEE] hover:opacity-100 
-                        text-white py-2 px-4 rounded transition"
-            >
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
       </div>
@@ -253,9 +235,9 @@ const HomeBody = () => {
                 good CEO, and Clean design{" "}
               </p>
             </div>
-            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
 
@@ -280,13 +262,9 @@ const HomeBody = () => {
                 good CEO, and Clean design
               </p>
             </div>
-            <button
-              className="mt-6 w-fit text-sm font-medium flex items-center gap-2 
-  !bg-[#466FEE] hover:opacity-100 
-  text-white py-2 px-4 rounded transition"
-            >
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
 
@@ -307,9 +285,9 @@ const HomeBody = () => {
                 good CEO, and Clean design{" "}
               </p>
             </div>
-            <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
-              GET STARTED <span>↗</span>
-            </button>
+            <div className="w-full sm:w-auto flex justify-start">
+              <MyButton text="GET STARTED" />
+            </div>
           </div>
         </div>
       </div>
@@ -338,10 +316,7 @@ const Card = ({ title, description, bg, text, style, className }) => {
         <p className="text-sm opacity-90">{description}</p>
       </div>
 
-      <button className="mt-6 w-fit text-sm font-medium flex items-center gap-2 opacity-90 hover:opacity-100 transition">
-        GET STARTED
-        <span>↗</span>
-      </button>
+      <MyButton text="GET STARTED" />
     </div>
   );
 };

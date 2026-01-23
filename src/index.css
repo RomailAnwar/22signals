@@ -1,22 +1,90 @@
 
-@import "tailwindcss";
+:root {
+   --h1-size: 60px;
+  --h1-line: 1.15;
+  --p-color: rgba(255, 255, 255, 0.7);
+  --p-size: 14px;
+    --h1-gradient: linear-gradient(
+    91.16deg,
+    #325FEC 0%,       /* start blue */
+    #000000 40%,      /* black starts */
+    #000000 60%,      /* black ends */
+    #325FEC 100%      /* end blue */
+  );
+  --h2-size:68px;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+p {
+  color: var(--p-color);
+  font-size: var(--p-size);
+  line-height: 1.33;
+  font-weight: 400;
+}
 
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+/* redefine and immediately use them */
+p.dark-text {
+  --p-color: rgba(0,0,0,0.7);
+  --p-size: 25px;
+  color: var(--p-color);
+  font-size: var(--p-size);
+}
+
+p.white-text {
+  --p-color: rgba(243, 243, 243, 0.7);
+  --p-size: 25px;
+  color: var(--p-color);
+  font-size: var(--p-size);
+}
+
+.h1-large {
+  --h1-size: 160px;
+  --h1-line: 1.1;
+}
+
+.h1-large-color {
+  --h1-size: 160px;
+  --h1-line: 1.1;
+   --h1-gradient:linear-gradient(91.16deg, #325FEC 1.74%, #FFFFFF 43.71%, #FFFFFF 61.62%, #325FEC 102.48%);
+;
+}
+h1.card-heading{
+   --h1-size: 40px;
+  --h1-line: 1.1;
+}
+
+h1.progress-bar{
+   --h1-size: 35px;
+  --h1-line: 1.1;
+}
+
+h1.teamcard-title{
+   --h1-size: 35px;
+  --h1-line: 1.1;
+     --h1-gradient:linear-gradient(91.16deg, #325FEC 1.74%, #FFFFFF 43.71%, #FFFFFF 61.62%, #325FEC 102.48%);
+  text-align: left;
+}
+h1 {
+  font-weight: 300 !important;
+   font-size: var(--h1-size);
+  line-height: var(--h1-line);
+
+  background: var(--h1-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;  /* for Firefox */
+  color: transparent;
+
+  margin: 0;
+  display: inline-block;  /* ensures gradient fits text width */
+}
+
+h2.team-title{
+  --h2-size: 68px;
+}
 
 
-
-h1{
-  font-weight: 300;
-    line-height: 68px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background:  "linear-gradient(91.16deg, #325FEC 1.74%, #FFFFFF 43.71%, #FFFFFF 61.62%, #325FEC 102.48%)";
-    font-size: 60px; 
+h2.recentproject-title{
+  --h2-size: 68px;
 }
   h2 {
     font-weight: 300;
@@ -30,7 +98,7 @@ h1{
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 68px; /* Desktop default */
+    font-size: var(--h2-size);
   }
   h3{
     font-weight: 300;
@@ -47,25 +115,10 @@ h1{
     -webkit-text-fill-color: transparent;
   }
 
-  p{
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
-    line-height: 133%;
-    font-weight: 100 !important;
-    vertical-align: middle;
-  }
-  .dark-text{
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 25px;
-    line-height: 133%;
-    letter-spacing: 2%;
-    vertical-align: middle;
-  }
+
 
   @media (max-width: 1024px) {
-    h2 {
-      font-size: 48px; /* Tablet */
-    }
+
     h1{
       font-size: 48px; /* Tablet */
     }
@@ -73,22 +126,45 @@ h1{
 
 /* Mobile */
 @media (max-width: 640px) {
+  h1.card-heading {
+    --h1-size: 25px;
+    --h1-line: 1.3;
+  }
+  h1.progress-bar{
+    --h1-size: 25px;
+    --h1-line: 1.5;
+    text-align: center;
+  }
+
+  .h1-large {
+  --h1-size: 60px;
+  --h1-line: 1.1;
+}
+h2.recentproject-title{
+  --h2-size: 25px;
+}
+
+  h1 {
+    font-size: var(--h1-size);
+    line-height: var(--h1-line);
+  }
   h2 {
-    font-size: 32px; /* Mobile */
     padding: 19px 0px;
-    
   }
   h3{
     line-height: 50px;
     width: 100%;
   }
-  h1{
-    font-size: 45px; /* Mobile */
-       line-height: 50px;
-  } 
-  .dark-text{
-    font-size: 22px;
-  }
+p.dark-text {
+  --p-size: 18px;
+}
+p.white-text{
+  --p-size: 18px;
+}
+
+.h1-large-color{
+  font-size: 45px;
+}
   P{
     width: 100%;
   }
@@ -106,9 +182,9 @@ html{
 
 body {
     margin: 0;
-    padding: 0;
-     max-width: 1735px;      
-   width: 100%;   
+    padding: 0; 
+    width: 100%;   
+    max-width: 100%;   
     margin-left: auto;
     margin-right: auto;
     font-family: Aeonik, sans-serif;
@@ -117,6 +193,11 @@ body {
     font-size: 15px;
     line-height: 100%;
     letter-spacing: 0%;
+    background-color: #f0f1fa;
+}
+
+body.team-page {
+  background-color: #000000;
 }
 
 .container {
@@ -145,21 +226,39 @@ body {
   }
 }
 
-
 button {
-    display: flex;
-    cursor: pointer;
-    font-family: Aeonik, sans-serif;
-    font-weight: lighter;
-    font-style: Regular;
-    font-size: 15px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    background-color: rgba(50, 95, 236, 1);
-    color: rgba(239, 239, 239, 1);
-    padding: 12px 30px;
-    border-radius: 50px;
-    gap: 10px;
+  display: inline-flex; /* shrink-wrap to content */
+  cursor: pointer;
+  font-family: Aeonik, sans-serif;
+  font-weight: lighter;
+  font-style: Regular;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  background-color: rgba(50, 95, 236, 1);
+  color: rgba(239, 239, 239, 1);
+  padding: 12px 30px;
+  border-radius: 50px;
+  gap: 10px;
+
+  width: auto; /* important: do not stretch */
+  box-sizing: border-box; /* keep padding inside */
 }
 
+
+.services-badge-secondry {
+    font-size: 14px;
+    padding: 7px 26px !important;
+    display: inline-block;
+    border-radius: 24px;
+    color: #000000b2;
+    font-weight: 500;
+
+    border: 2px solid transparent; /* border thickness */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: 
+        linear-gradient(#f0f1fa, #f0f1fa), /* inner background white */
+        linear-gradient(164deg, #504CFF 26.9%, rgba(80, 76, 255, 0) 99.52%); /* gradient border */
+}
 

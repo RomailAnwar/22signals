@@ -1,0 +1,217 @@
+/* Header Wrapper */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  transition: background-color 0.5s;
+  padding: 0px 105px;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile view: flex layout */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem; /* smaller padding on mobile */
+}
+
+
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Desktop Menu */
+.menu.desktop-menu {
+  display: none;
+}
+
+
+
+.menu-item {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.3s;
+}
+
+.menu-item.active {
+  color: #000000;
+}
+
+
+
+
+/* Mobile Hamburger */
+.mobile-hamburger {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 16rem; /* 64 */
+  background-color: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 50;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.mobile-menu-item {
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.mobile-menu-item.active {
+  font-weight: bold;
+}
+
+.mobile-menu-button {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  z-index: 40;
+}
+
+.overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.desktop-button {
+  display: none;
+}
+
+.mobile-hamburger {
+  display: flex; /* show by default on mobile */
+}
+
+@media (max-width: 1520px) {
+  .header-container {
+    grid-template-columns:1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .header{
+    padding: 0px;
+  }
+}
+
+
+@media (min-width: 640px) {
+     .header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+  }
+     .mobile-hamburger {
+    display: none; /* hide on desktop */
+  }
+  .menu.desktop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+ .desktop-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+    .btn {
+    display: flex;
+    align-items: center;
+}
+
+  .mobile-hamburger {
+    display: none;
+  }
+}
+
+.menu-black {
+  color: #000000 !important;
+}
+
+.menu-white {
+  color: #ffffff !important;
+}
+
+.menu-item,
+.mobile-menu-item {
+  transition: color 0.3s ease;
+}
+
+
+/* Hover effect */
+.menu-item:hover,
+.mobile-menu-item:hover {
+  opacity: 0.8;
+}
+
+/* Optional: header background on team page */
+.team-header {
+  background: transparent; /* ya dark background agar chaho */
+}
+
+/* Smooth scroll effect when header changes */
+.header {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.mobile-menu .mobile-menu-item {
+  color: #000000 !important;
+}
