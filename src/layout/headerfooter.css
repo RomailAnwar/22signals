@@ -1,12 +1,15 @@
-/* Header Wrapper */
+/* ================================
+   HEADER BASE (DESKTOP)
+================================ */
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 50;
-  transition: background-color 0.5s;
-  padding: 0px 187px;
+  padding: 0 136px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header.scrolled {
@@ -15,17 +18,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile view: flex layout */
 .header-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0; /* no left/right padding */
   align-items: center;
-  padding: 1rem 1.5rem; /* smaller padding on mobile */
 }
 
+/* ================================
+   LOGO
+================================ */
 
-
-/* Logo */
 .logo-wrapper {
   display: flex;
   align-items: center;
@@ -36,12 +40,16 @@
   width: auto;
 }
 
-/* Desktop Menu */
+/* ================================
+   DESKTOP MENU
+================================ */
+
 .menu.desktop-menu {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
-
-
 
 .menu-item {
   font-size: 15px;
@@ -49,31 +57,60 @@
   text-transform: uppercase;
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.5);
-  transition: color 0.3s;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .menu-item.active {
   color: #000000;
 }
 
+.menu-black {
+  color: #000000 !important;
+}
 
+.menu-white {
+  color: #ffffff !important;
+}
 
+.menu-item:hover {
+  opacity: 0.8;
+}
 
-/* Mobile Hamburger */
-.mobile-hamburger {
+/* ================================
+   DESKTOP BUTTON
+================================ */
+
+.desktop-button {
   display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+}
+
+/* ================================
+   MOBILE HAMBURGER
+================================ */
+
+.mobile-hamburger {
+  display: none;
   justify-content: flex-end;
 }
 
+/* ================================
+   MOBILE MENU
+================================ */
 
-/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 16rem; /* 64 */
-  background-color: white;
+  width: 16rem;
+  background-color: #ffffff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
   transition: transform 0.5s ease-in-out;
@@ -100,11 +137,16 @@
 
 .mobile-menu-item {
   text-transform: uppercase;
-  transition: color 0.3s;
+  color: #000000;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .mobile-menu-item.active {
   font-weight: bold;
+}
+
+.mobile-menu-item:hover {
+  opacity: 0.8;
 }
 
 .mobile-menu-button {
@@ -113,14 +155,17 @@
   justify-content: center;
 }
 
-/* Overlay */
+/* ================================
+   OVERLAY
+================================ */
+
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease;
   z-index: 40;
 }
 
@@ -128,90 +173,50 @@
   opacity: 1;
   visibility: visible;
 }
-.desktop-button {
-  display: none;
+
+/* ================================
+   OPTIONAL PAGE STYLES
+================================ */
+
+.team-header {
+  background: transparent;
 }
 
-.mobile-hamburger {
-  display: flex; /* show by default on mobile */
-}
+/* ================================
+   TABLET
+================================ */
 
-@media (max-width: 1520px) {
-  .header-container {
-    grid-template-columns:1fr 1fr 1fr;
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 60px;
   }
 }
+
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 640px) {
-  .header{
-    padding: 0px;
+  .header {
+    padding: 0 16px;
   }
-}
 
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
 
-@media (min-width: 640px) {
-     .header-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    padding: 1.5rem 2rem;
-  }
-     .mobile-hamburger {
-    display: none; /* hide on desktop */
-  }
   .menu.desktop-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  
- .desktop-button {
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-  }
-    .btn {
-    display: flex;
-    align-items: center;
-}
-
-  .mobile-hamburger {
     display: none;
   }
-}
 
-.menu-black {
-  color: #000000 !important;
-}
+  .desktop-button {
+    display: none;
+  }
 
-.menu-white {
-  color: #ffffff !important;
-}
-
-.menu-item,
-.mobile-menu-item {
-  transition: color 0.3s ease;
-}
-
-
-/* Hover effect */
-.menu-item:hover,
-.mobile-menu-item:hover {
-  opacity: 0.8;
-}
-
-/* Optional: header background on team page */
-.team-header {
-  background: transparent; /* ya dark background agar chaho */
-}
-
-/* Smooth scroll effect when header changes */
-.header {
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.mobile-menu .mobile-menu-item {
-  color: #000000 !important;
+  .mobile-hamburger {
+    display: flex;
+  }
 }
