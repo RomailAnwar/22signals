@@ -21,7 +21,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ nextSectionRef }) => {
     config: { duration: 800 },
   });
 
-  // Scroll to next section
   const handleScroll = () => {
     if (nextSectionRef.current) {
       nextSectionRef.current.scrollIntoView({ behavior: "smooth" });

@@ -199,8 +199,8 @@ body.team-page {
 }
 
 .container {
-    width: 1735px;      
-    max-width: 100%;   
+    width: 100%;      
+    max-width: 1735px;   
     margin: 0 auto;  
     padding-left: 135px;
     padding-right: 135px;
