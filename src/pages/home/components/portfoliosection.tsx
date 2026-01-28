@@ -19,6 +19,8 @@ import test6 from "@/assets/test6.jpg";
 import test7 from "@/assets/test7.jpg";
 import test8 from "@/assets/test5.jpg";
 
+import FadeIn from "@/transitions/FadeIn.js";
+
 
 // Testimonials data (abhi component me shift nahi kiya, parent me hi rahega)
 const testimonials = [
@@ -156,6 +158,9 @@ const PortfolioSection = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {testimonials.map((item, idx) => (
+
+               <FadeIn delay={1.8}>
+
               <div
                 key={idx}
                 className="glass-card-2 testimonial-border bg-gray-900 p-6 rounded-xl text-gray-300 hover:bg-gray-800 transition flex flex-col gap-3 md:gap-4 min-h-[180px] h-auto"
@@ -183,7 +188,11 @@ const PortfolioSection = () => {
                   {item.text}
                 </p>
               </div>
-            ))}
+
+              </FadeIn>
+
+
+     ))}
           </div>
         </section>
       </div>
